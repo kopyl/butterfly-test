@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+justify-content: center;
+height: 100%;
+}
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #222022;
 }
 
 .App-logo {
@@ -34,5 +45,57 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+.imageContainer {
+    animation: image-container infinite 8s linear;
+}
+
+
+@keyframes image-container {
+  0% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+}
+
+
+.image {
+    display: flex;
+    gap: 4px;
+
+    object-fit: cover;
+    animation: butterfly infinite 1s linear;
+}
+
+.right {
+    transform: translate(0, 0) scaleX(-1);
+}
+
+.right, .left {
+    opacity: .1;
+}
+
+
+
+@keyframes butterfly {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+  50% {
+    transform: translate(0, 10px) scaleX(-0.2);
+  }
+  100% {
+    transform: translate(0, 0) scaleX(-1);
   }
 }
